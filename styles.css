@@ -1,1 +1,148 @@
-/* dfgdhfdgdjhgj */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --box-bg: #f9f9f9;
+  --accent-color: #4e8cff;
+  --button-hover: #366cd6;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --box-bg: #1e1e1e;
+  --accent-color: #4e8cff;
+  --button-hover: #2850a7;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  background: var(--box-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: background 0.3s;
+}
+
+body.dark select {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.quote-box {
+  background: var(--box-bg);
+  padding: 2rem;
+  margin: 1rem 0;
+  border-left: 5px solid var(--accent-color);
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-style: italic;
+  position: relative;
+  transition: font-size 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quote-box::before,
+.quote-box::after {
+  content: '"';
+  font-size: 2rem;
+  position: absolute;
+  color: var(--accent-color);
+}
+
+.quote-box::before {
+  top: 0;
+  left: 10px;
+}
+
+.quote-box::after {
+  bottom: 0;
+  right: 10px;
+}
+
+.font-size-controls,
+.nav-buttons {
+  margin-top: 1rem;
+}
+
+button {
+  margin: 0.3rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quote-box {
+    font-size: 1.2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
