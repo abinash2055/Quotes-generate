@@ -1,1 +1,41 @@
-<!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat ipsum molestias minus ut non nam tempore, dolor fugit excepturi nesciunt optio sint suscipit corporis iste magnam, ea in hic aut quo deleniti laboriosam quas. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quote Generator</h1>
+      <div class="controls">
+        <select id="categorySelect">
+          <option value="science">Science</option>
+          <option value="motivation">Motivation</option>
+        </select>
+        <div class="theme-toggle">
+          <label>Dark Mode</label>
+          <input type="checkbox" id="themeSwitch" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="quoteBox" class="quote-box">Loading...</div>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('decrease')">A-</button>
+        <button onclick="changeFontSize('increase')">A+</button>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="showPrevious()">Previous</button>
+        <button onclick="showRandom()">Random</button>
+        <button onclick="showNext()">Next</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
