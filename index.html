@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quote Generator</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Quote Generator</h1>
-      <div class="controls">
-        <select id="categorySelect">
-          <option value="science">Science</option>
-          <option value="motivation">Motivation</option>
-        </select>
-        <div class="theme-toggle">
-          <label>Dark Mode</label>
-          <input type="checkbox" id="themeSwitch" />
-        </div>
-      </div>
-    </header>
+    <div class="app-container">
+        <h1>Quote Generator</h1>
 
-    <main>
-      <div id="quoteBox" class="quote-box">Loading...</div>
-      <div class="font-size-controls">
-        <button onclick="changeFontSize('decrease')">A-</button>
-        <button onclick="changeFontSize('increase')">A+</button>
-      </div>
-      <div class="nav-buttons">
-        <button onclick="showPrevious()">Previous</button>
-        <button onclick="showRandom()">Random</button>
-        <button onclick="showNext()">Next</button>
-      </div>
-    </main>
-  </div>
+        <div class="quote-display">
+            <p id="quote">Click "Next" to get a quote!</p>
+            <span id="author"></span>
+        </div>
+
+        <div class="controls">
+            <div class="category">
+                <label for="category-select">Select Category: </label>
+                <select id="category-select">
+                    <option value="all">All</option>
+                    <option value="science">Science</option>
+                    <option value="motivational">Motivational</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button id="previous">Previous</button>
+                <button id="next">Next</button>
+                <button id="random">Random</button>
+            </div>
+
+            <div class="mode">
+                <label for="dark-mode-switch">Dark Mode</label>
+                <input type="checkbox" id="dark-mode-switch">
+            </div>
+
+            <div class="font-size">
+                <label for="font-size">Font Size: </label>
+                <button id="increase-font">A+</button>
+                <button id="decrease-font">A-</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
